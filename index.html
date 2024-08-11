@@ -4,17 +4,24 @@
 		<title>React App Without CRA</title>
 		<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
 		<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	</head>
 	<body>
 		<div id="root"></div>
-		<script>
-			const App = () =>
-				React.createElement("h1", null, "HELLO REACT WORLD");
-			const root = ReactDOM.createRoot(document.getElementById("root"));
-			root.render(
-				React.createElement(App),
-				document.getElementById("root")
-			);
+		<script type="text/babel">
+			// babel 적용 전(JSX 없는 바닐라 js)
+
+			// const App = () =>
+			// 	React.createElement("h1", null, "HELLO REACT WORLD");
+			// const root = ReactDOM.createRoot(document.getElementById("root"));
+			// root.render(
+			// 	React.createElement(App),
+			// 	document.getElementById("root")
+			// );
+
+			// babel 적용 후
+			const App = () => <h1>HELLO REACT WORLD</h1>;
+			ReactDOM.render(<App />, document.getElementById("root"));
 		</script>
 	</body>
 </html>
